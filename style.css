@@ -72,11 +72,26 @@ body {
   width: 100%;
   color: gold;
   font-family: 'Russo One', sans-serif;
-  font-size: 2rem;
+  font-size: calc(0.8rem + 1.5vw); /* Kích thước chữ linh hoạt */
   text-align: center;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  z-index: 900; /* Đặt z-index cao hơn để hiển thị trên tất cả các nội dung khác */
+  z-index: 900; /* Hiển thị trên tất cả các nội dung khác */
   animation: glow 2s infinite alternate;
+}
+
+/* Điều chỉnh chi tiết hơn trên các thiết bị nhỏ */
+@media (max-width: 768px) {
+  .new-year-greeting {
+    font-size: calc(1rem + 1.5vw); /* Chữ nhỏ hơn nhưng vẫn rõ ràng */
+    top: 40px; /* Giảm khoảng cách từ trên xuống */
+  }
+}
+
+@media (max-width: 480px) {
+  .new-year-greeting {
+    font-size: 1.5rem; /* Chữ vừa đủ nhỏ cho điện thoại */
+    top: 30px; /* Tăng thêm khoảng trống trên màn hình nhỏ */
+  }
 }
 
 @keyframes glow {
